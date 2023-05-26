@@ -145,7 +145,7 @@ class Register extends Component {
                   </div>
                   <div className="col-lg-6 d-flex align-items-center gradient-custom-2">
                     <div className="text-white px-3 py-4 p-md-5 mx-md-4">
-                      <h4 className="mb-4">React project</h4>
+                      <h4 className="mb-4">React REST Api</h4>
                       <p className="small mb-0">
                         Authors:<br/>
                         Aleksandra Nowak<br/>
