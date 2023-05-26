@@ -146,7 +146,7 @@ class Product extends Component {
               <div className="form-group">
                 <label htmlFor="price">Price</label>
                 <input
-                  type="text"
+                  type="number"
                   className="form-control"
                   id="price"
                   value={currentProduct.price}
