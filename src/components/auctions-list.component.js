@@ -17,7 +17,9 @@ export default class AuctionsList extends Component {
   }
 
   onChangeNewPrice(e) {
+    console.log(e);
     this.setState({
+      
       newPrice: e.target.value
     });
   }
@@ -124,12 +126,12 @@ export default class AuctionsList extends Component {
                           {Product.customerId != sessionStorage.getItem("user_id") ? (
                             <input
                                 type="text"
-                                className="form-control"
-                                id="newPrice"
+                                className={`form-control newPrice_${Product.productId}`}
                                 required
-                                value={this.state.newPrice}
+                                
                                 onChange={this.onChangeNewPrice}
-                                name="newPrice"
+                                name={`newPrice_${Product.productId}`}
+                                id={`newPrice_${Product.productId}`}
                               />
                           ) : (
                             <p><small>Your bid is the highest</small></p>

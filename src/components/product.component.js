@@ -21,7 +21,8 @@ class Product extends Component {
         price: "",
         endDate: ""
       },
-      message: ""
+      message: "",
+      messagesType: "",
     };
   }
 
@@ -91,7 +92,8 @@ class Product extends Component {
     )
       .then(response => {
         this.setState({
-          message: "The Product was updated successfully!"
+          message: "The Product was updated successfully!",
+          messageType: "alert alert-success"
         });
       })
       .catch(e => {
@@ -117,7 +119,9 @@ class Product extends Component {
         {currentProduct ? (
           <div className="edit-form">
             <h4>Product</h4>
-            {this.state.message ? (<h6>You submitted successfully!</h6>) : ("")}
+            {this.state.message && (
+              <div className={this.state.messageType} role="alert">{this.state.message}</div>
+           )}
             <form>
               <div className="form-group">
                 <label htmlFor="title">Title</label>
@@ -152,7 +156,7 @@ class Product extends Component {
               <div className="form-group">
                 <label htmlFor="endDate">Date end</label>
                 <input
-                  type="text"
+                  type="date"
                   className="form-control"
                   id="endDate"
                   value={currentProduct.endDate}
@@ -160,19 +164,21 @@ class Product extends Component {
                 />
               </div>
             </form>
-
+            <br />
+            <center>
             <button
+              className="btn btn-danger"
               onClick={this.deleteProduct}
             >
               Delete
-            </button>
-            <button
+            </button> <button
+              className="btn btn-success"
               type="submit"
               onClick={this.updateProduct}
             >
               Update
             </button>
-           
+            </center>
           </div>
         ) : (
           <div>
