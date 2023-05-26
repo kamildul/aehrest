@@ -125,7 +125,7 @@ export default class AuctionsList extends Component {
                         <td>
                           {Product.customerId != sessionStorage.getItem("user_id") ? (
                             <input
-                                type="text"
+                                type="number"
                                 className={`form-control newPrice_${Product.productId}`}
                                 required
                                 
