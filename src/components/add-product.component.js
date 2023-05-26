@@ -140,7 +140,7 @@ export default class AddProduct extends Component {
             <div className="form-group">
               <label htmlFor="endDate">endDate</label>
               <input
-                type="text"
+                type="date"
                 className="form-control"
                 id="endDate"
                 required
@@ -149,10 +149,12 @@ export default class AddProduct extends Component {
                 name="endDate"
               />
             </div>
-
-            <button onClick={this.saveProduct} className="btn btn-success">
-              Add new offer
-            </button>
+            <br />
+            <center>
+              <button type="submit" onClick={this.saveProduct} className="btn btn-success">
+                Add new offer
+              </button>
+            </center>
           </div>
         )}
       </div>
